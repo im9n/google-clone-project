@@ -1,7 +1,7 @@
 import "./App.css";
 import Home from "./pages/Home.jsx";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Searchpage from "./pages/Searchpage.jsx";
+import SearchPage from "./pages/SearchPage.jsx";
 
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     <div className="app">
       <Router>
         <Routes>
-        <Route path="/search" element={<Searchpage />}/>
+        <Route path="/search" element={<SearchPage />}/>
         <Route path="/" exact element={<Home />}/>
         </Routes>
       </Router>
