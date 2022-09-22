@@ -5,7 +5,7 @@ const Option = ({icon, text}) => {
     return (
         <div className="searchpage__option">
         {icon && icon}
-        <Link to={`/${text}`}>{text}</Link>
+        <Link to='/'>{text}</Link>
         </div>
     );
 }

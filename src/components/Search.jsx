@@ -20,7 +20,7 @@ function Search ({ hideButtons = false }) {
     term: input
     })
 
-    navigate("search");
+    navigate("/search");
   };
 
   return (

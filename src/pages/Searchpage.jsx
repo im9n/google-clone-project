@@ -15,9 +15,7 @@ import Option from "../components/Option";
 
 const SearchPage = () => {
   const [{ term }, dispatch] = useStateValue();
-  //   const { data } = useGoogleSearch(term) LIVE API CALL
-
-  const data = Response;
+  const { data } = useGoogleSearch(term)
 
   console.log(data);
 
@@ -53,9 +51,23 @@ const SearchPage = () => {
       {term && (
         <div className="searchpage__results">
           <p className="searchpage__results--counter">
-            About {data?.searchInformation.formattedTotalResults} results 
-            in {data?.searchInformation.formattedSearchTime} seconds for "{term}"
+            About {data?.searchInformation.formattedTotalResults} results in{" "}
+            {data?.searchInformation.formattedSearchTime} seconds for "{term}"
           </p>
+          {data?.items.map((item) =>  
+            <div className="searchpage__result">
+              <a href={item.link}>
+                {item.pagemap?.cse_image?.length > 0 && item.pagemap?.cse_image[0]?.src && (
+                  <img src={item.pagemap?.cse_image?.length > 0 && item.pagemap?.cse_image[0]?.src} alt="" className="searchpage__result--image" />
+                )}
+                {item.displayLink}
+              </a>
+              <a href={item.link} className="searchpage__result--title">
+                <h2>{item.title}</h2>
+              </a>
+              <p className="searchpage__result--snippet">{item.snippet}</p>
+            </div>
+          )}
         </div>
       )}
     </div>

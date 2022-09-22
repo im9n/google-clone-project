@@ -27,6 +27,7 @@
   justify-content: space-between;
   align-items: center;
   color: grey;
+  margin-top: 20px;
 }
 
 .searchpage__options--right,
@@ -51,4 +52,44 @@
 
 .searchpage__option a{
     margin-left: 5px;
+    cursor: not-allowed
+}
+
+.searchpage__result {
+  margin: 40px 0
+}
+
+.searchpage__result--count{
+  color: #70757a;
+  font-size: 14px;
+}
+
+.searchpage__results{
+  max-width: 650px;
+  margin-top: 20px;
+  margin-left: 240px;
+  margin-bottom: 100px;
+}
+
+.searchpage__result--title{
+ text-decoration: none; 
+}
+
+.searchpage__result--title:hover{
+  text-decoration: underline;
+}
+
+.searchpage__result--title > h2{
+  font-weight: 500;
+}
+
+.searchpage__result--snippet{
+  margin-top: 10px;
+}
+
+.searchpage__result--image{
+  object-fit: contain;
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
 }
